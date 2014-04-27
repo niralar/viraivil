@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Viraivil | Coming Soon</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/viraivil/images/favicon.png" type="image/png" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- Cascading Style Sheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome-ie7.min.css">
+	<![endif]-->
+	<!-- /Cascading Style Sheets -->
+  </head>
+  <body>
+  <!-- Main Content -->
+  <div class="content">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Viraivil" class="img-rounded" />
+      </div>
+      <h1>We&#39;re coming soon!</h1>
+      <p>We are working on our new version. It will bring a lot of new features. Stay tuned!</p>
+    </div>
+    <div id="counter" class="counter"></div>
+    <div class="units">
+      <ul>
+        <li id="days">Days</li>
+        <li id="hours">Hours</li>
+        <li id="minutes">Minutes</li>
+        <li id="seconds">Seconds</li>
+      </ul>
+    </div>
+    <div class="workprogress">
+	<div class="progress progress-striped" id="progress" data-toggle="tooltip" title="Progress 60%">
+	<div class="progress-bar" aria-valuetransitiongoal="60"></div>
+      </div>
+      <p>Current status: Working on the unique template design!</p>
+    </div>
+    <div class="subscribe">
+      <p>Sign up now to our newsletter and you&#39;ll be one of the first to know when the site is ready</p>
+      <form class="form-inline" id="subscribe">
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="type your email address" />
+      <input type="submit" class="btn btn-primary" value="Subscribe" /></form>
+    </div>
+	<div id="subscribestatus"></div>
+    <div class="social-icons">
+	<ul>
+	<li><a href='https://www.facebook.com/' target="_blank"><i rel="tooltip" title="facebook" class="icon-facebook icon-large"></i></a></li>
+	<li><a href='https://twitter.com/' target="_blank"><i rel="tooltip" title="twitter" class="icon-twitter icon-large"></i></a></li>
+	<li><a href='https://plus.google.com/' target="_blank"><i rel="tooltip" title="google plus" class="icon-google-plus icon-large"></i></a></li>
+	<li><a href='https://www.linkedin.com/' target="_blank"><i rel="tooltip" title="linkedin" class="icon-linkedin icon-large"></i></a></li>
+	<li><a href="#map" data-toggle="modal"><i rel="tooltip" title="get direction" class="icon-map-marker icon-large"></i></a></li>
+	<li><a href="#contact" data-toggle="modal"><i rel="tooltip" title="contact" class="icon-envelope icon-large"></i></a></li>
+	<li><a href="#info" data-toggle="modal"><i rel="tooltip" title="about" class="icon-info icon-large"></i></a></li>
+	</ul>
+    </div>
+  </div>
+  <!-- /Main Content -->
+  <!-- Google Map Modal -->
+  <div class="modal fade" id="map" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Get direction to reach us</h4>
+        </div>
+        <div class="modal-body">
+          <div id="map-canvas"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Google Map Modal -->
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contact" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Contact Information</h4>
+        </div>
+        <div class="modal-body">
+          <div class="contact-details">
+            <address>
+            <strong><a href="http://www.niralar.com/" target="_blank">Niralar</a></strong>
+            <br />Villupuram,
+            <br />Tamilnadu -605401 India.
+            <br />Phone: +91-XXXXXXXXXX
+            <br />Email: support@niralar.com
+            <br />Website: www.niralar.com</address>
+          </div>
+          <div class="form">
+            <h4>Let&#39;s keep in touch</h4>
+            <div id="contact-status"></div>
+            <form class="form-horizontal" id="form">
+              <div class="form-group">
+              <label for="exampleInputEmail">Your Name</label> 
+              <input type="text" name="name" class="form-control" id="exampleInputEmail" placeholder="Enter email" /></div>
+              <div class="form-group">
+              <label for="exampleInputPassword">Your Email</label> 
+              <input type="text" name="email" class="form-control" id="exampleInputPassword" placeholder="Password" /></div>
+              <div class="form-group">
+              <label for="inputPassword">Your Message</label> 
+              <textarea name="message" class="form-control" rows="3"></textarea></div>
+              <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Send your message" id="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Contact Modal -->
+  <!-- About Modal -->
+  <div class="modal fade" id="info" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">About</h4>
+        </div>
+        <div class="modal-body">
+          <p>Viraivil is Responsive Coming Soon Template crafted with HTML5, CSS3 and jQuery. It&#39;s simple to configure
+          countdown clock. You have also about and newsletter section for collecting emails. Viraivil will perfectly suitable for
+          any creative, business website other under construction or landing page theme.</p>
+          <div class="service">
+            <div class="row">
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  <i class="icon-magic icon-4x"></i>
+				  <h4>Retina Ready</h4>
+				  <h5>Ultra sharp graphics</h5>
+				  <p><small>Syndicate looks beautiful on retina displays. Makes it easy to serve high-resolution images to devices with retina displays.</small></p>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6"><i class="icon-tablet icon-4x"></i> 
+				  <h4>Fully Responsive</h4>
+				  <h5>Down to Phone Screen</h5>
+				  <p><small>A website that responds to the device that accesses it and delivers the appropriate output for it uses responsive design.</small></p>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6"><i class="icon-cogs icon-4x"></i>
+				  <h4>Built With Bootstrap 3!</h4>
+				  <h5>HTML5 &amp; CSS3 Valid Code</h5>
+				  <p><small>Sleek, intuitive, and powerful mobile-first front-end framework for faster and easier web development.</small></p>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6"><i class="icon-comments icon-4x"></i>
+				  <h4>Free Support</h4>
+				  <h5>It's Free and Always Will Be</h5>
+				  <p><small>Don't worry - we've got you covered! Grab a cup of coffee and let us jump in. We also do small customization for free.</small></p>
+				  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /About Modal -->
+  <!-- JavaScript-->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script> 
+  <script type="text/javascript" src="js/bootstrap-progressbar.min.js"></script> 
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script> 
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+  <!-- /JavaScript-->
+  </body>
+</html>
