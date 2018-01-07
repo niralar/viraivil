@@ -5,9 +5,9 @@ define('PASSWORD', 'demo'); //Administrator Password
 
 //Database Details
 define('HOSTNAME', 'localhost'); //Host Name
-define('DBUSERNAME', 'root'); //Database Username
-define('DBPASSWORD', ''); //Database Password
-define('DATABASE', 'test'); //Database Name
+define('DBUSERNAME', 'admin_viraivil'); //Database Username
+define('DBPASSWORD', '434Q2vBVyf'); //Database Password
+define('DATABASE', 'admin_viraivil'); //Database Name
 define('TABLE', 'subscribe'); //Table Name
 
 //Pagination Configuration
@@ -37,6 +37,8 @@ define('MSG_SEND_ERROR', 'Sorry, we can\'t send this message.');
 define('MSG_INVALID_SUBSCRIBE_EMAIL', 'Oops! Please enter a valid email address');
 
 //Connecting to Database
-mysql_connect(HOSTNAME, DBUSERNAME, DBPASSWORD);
-mysql_select_db(DATABASE) or die("database could not connect ");
+$con = mysqli_connect(HOSTNAME, DBUSERNAME, DBPASSWORD, DATABASE);
+if (mysqli_connect_errno()) {
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 ?>

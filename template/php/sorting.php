@@ -1,4 +1,5 @@
 <?php
+require_once('config.php');
 include 'pagination.php';
 $Pagination = new Pagination();
 //Column Sorting Arrows
@@ -33,11 +34,11 @@ function columnSortArrows($field, $text, $currentfield = null, $currentsort = nu
 }
 //---------------------------------------------------------------------------
 //Counting Total Number of Rows
-$totalrows = mysql_fetch_array(mysql_query("SELECT count(*) as total FROM `" . TABLE . "`"));
+$totalrows = mysqli_fetch_array(mysqli_query($con, "SELECT count(*) as total FROM `" . TABLE . "`"));
 //Setting Item Limit Per Page
 $limit     = RECORDPERPAGE;
 if (isset($_GET['page']) && is_numeric(trim($_GET['page']))) {
-    $page = mysql_real_escape_string($_GET['page']);
+    $page = mysqli_real_escape_string($_GET['page']);
 } else {
     $page = 1;
 }
@@ -60,8 +61,8 @@ if($totalrows['total']>0)
 {
 if (!isset($_GET['orderby']) OR trim($_GET['orderby']) == "") {
     $sql = "SELECT * FROM `" . TABLE . "` LIMIT 1";
-    $result = mysql_query($sql) or die(mysql_error());
-    $array = mysql_fetch_assoc($result);
+    $result = mysqli_query($con, $sql) or die(mysqli_error());
+    $array = mysqli_fetch_assoc($result);
     $i     = 0;
     foreach ($array as $key => $value) {
         if ($i > 0) {
@@ -73,21 +74,21 @@ if (!isset($_GET['orderby']) OR trim($_GET['orderby']) == "") {
     }
     $sort = "ASC";
 } else {
-    $orderby = mysql_real_escape_string($_GET['orderby']);
+    $orderby = mysqli_real_escape_string($_GET['orderby']);
 }
 //If Sort Not Set Or Invalid, Set Default
 if (!isset($_GET['sort']) OR ($_GET['sort'] != "ASC" AND $_GET['sort'] != "DESC")) {
     $sort = "ASC";
 } else {
-    $sort = mysql_real_escape_string($_GET['sort']);
+    $sort = mysqli_real_escape_string($_GET['sort']);
 }
 //Getting Data
 $sql = "SELECT * FROM `" . TABLE . "` ORDER BY $orderby $sort LIMIT $startrow,$limit";
-$result = mysql_query($sql) or die(mysql_error());
-$array = mysql_fetch_assoc($result);
+$result = mysqli_query($con, $sql) or die(mysqli_error());
+$array = mysqli_fetch_assoc($result);
 }
 //Counting Active and Inactive Users
-$active = mysql_fetch_array(mysql_query("SELECT count(*) as rows FROM `" . TABLE . "` WHERE subscribed='Yes'"));
-$inactive = mysql_fetch_array(mysql_query("SELECT count(*) as rows FROM `" . TABLE . "` WHERE subscribed='No'"));
+$active = mysqli_fetch_array(mysqli_query($con, "SELECT count(*) as rows FROM `" . TABLE . "` WHERE subscribed='Yes'"));
+$inactive = mysqli_fetch_array(mysqli_query($con, "SELECT count(*) as rows FROM `" . TABLE . "` WHERE subscribed='No'"));
 
 ?>

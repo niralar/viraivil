@@ -1,3 +1,18 @@
+.opm-ribbon { 
+position:absolute; 
+top:60px; 
+left:0px; 
+z-index:99999; 
+} 
+
+.opm-ribbon a { 
+width:65px; 
+height:85px; 
+text-indent:-9999px; 
+display:block; 
+background:url('https://s3.amazonaws.com/onepagemania/opm-badge.png') no-repeat; 
+}
+
 body,.modal-content {
 background:#EFEFEF url(../images/bg.jpg) repeat top left;
 }

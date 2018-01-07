@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once('config.php');
 require_once('../php/sorting.php');
 ?>
     <div class='subscriberls'>
@@ -26,7 +27,7 @@ require_once('../php/sorting.php');
             </tr>
           </thead>
           <tbody>
-            <?php mysql_data_seek($result,0); while($row = mysql_fetch_assoc($result)){ ?>
+            <?php mysqli_data_seek($result,0); while($row = mysqli_fetch_assoc($result)){ ?>
             <tr>
               <?php foreach ($row as $field=>$value) { if($field=="id") { ?>
               <td>
@@ -42,9 +43,11 @@ require_once('../php/sorting.php');
           </tbody>
         </table>
         <div class="option">
+		<!--
         <input class="btn btn-primary btn-sm" name="button" type="submit" value="Delete" />
 		<input class="btn btn-primary btn-sm" name="button" type="submit" value="Delete All" />
 		<input class="btn btn-primary btn-sm" name="button" type="submit" value="Export All" />
+		-->
         <?php if(!($prev_link==null && $next_link==null && $pagination_links==null)){ ?>
         <ul class="pagination pagination-sm pull-right">
           <?php

@@ -13,13 +13,13 @@ if (!$email) {
 }
 if (!$err) {
     //Save to Database
-    $query  = "SELECT * FROM `" . TABLE . "` WHERE email_address = '" . mysql_real_escape_string($email) . "'";
-    $result = mysql_query($query);
-    if (mysql_num_rows($result) > 0)
+    $query  = "SELECT * FROM `" . TABLE . "` WHERE email_address = '" . mysqli_real_escape_string($con, $email) . "'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0)
         echo "Already exists in the subscriber database!";
     else {
-        $query = "INSERT INTO `" . TABLE . "` ( `email_address`, `subscribed`) VALUES ( '" . mysql_real_escape_string($email) . "', '" . SUBSCRIPTION . "')";
-        mysql_query($query) or die("Error adding " . $email . " to the database!");
+        $query = "INSERT INTO `" . TABLE . "` ( `email_address`, `subscribed`) VALUES ( '" . mysqli_real_escape_string($con, $email) . "', '" . SUBSCRIPTION . "')";
+        mysqli_query($con, $query) or die("Error adding " . $email . " to the database!");
         $sent = mail(TO_EMAIL, SUBJECT, SUBSCRIBER_MAIL_MESSAGE, $headers);
 		$usersent = mail($email, USERSUBJECT, USER_SUBSCRIBER_MAIL_MESSAGE, $userheaders);
         if ($sent)

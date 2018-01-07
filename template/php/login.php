@@ -8,14 +8,14 @@
             <label for="exampleInputEmail1">Username</label>
             <div class="input-group">
 			  <span class="input-group-addon"><i class="icon-user"></i></span>
-              <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username" />
+              <input type="text" name="username" value="demo" class="form-control" id="exampleInputEmail1" placeholder="Username"/>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <div class="input-group">
 			  <span class="input-group-addon"><i class="icon-key"></i></span>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+              <input type="password" name="password" value="demo" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
             </div>
           </div>
           <div class="form-group">
